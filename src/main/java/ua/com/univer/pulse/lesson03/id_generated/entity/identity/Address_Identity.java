@@ -1,5 +1,7 @@
 package ua.com.univer.pulse.lesson03.id_generated.entity.identity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
@@ -7,10 +9,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name ="address")
-public class Address {
+public class Address_Identity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment", strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "increment", strategy = "increment")
     private Long id;
 
     @Column(name = "name")

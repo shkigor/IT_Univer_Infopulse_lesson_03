@@ -1,8 +1,8 @@
 package ua.com.univer.pulse.lesson03.id_generated;
 
 import org.hibernate.SessionFactory;
-import ua.com.univer.pulse.lesson03.id_generated.entity.identity.Address;
-import ua.com.univer.pulse.lesson03.id_generated.entity.identity.User;
+import ua.com.univer.pulse.lesson03.id_generated.entity.identity.Address_Identity;
+import ua.com.univer.pulse.lesson03.id_generated.entity.identity.User_Identity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -20,12 +20,12 @@ public class Part01_GenerationType_IDENTITY {
 
         entityManager.getTransaction().begin();
 
-        User user = new User();
+        User_Identity user = new User_Identity();
         user.setName("Vasya");
         user.setLastName("Pupkin");
         entityManager.persist(user);
 
-        Address address = new Address();
+        Address_Identity address = new Address_Identity();
         address.setName("Stepana Bandery");
         entityManager.persist(address);
 

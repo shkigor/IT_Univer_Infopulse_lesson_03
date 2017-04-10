@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity // Можно и здесь указать имя таблицы, к которой мы привязываем сущность
 @Table(name = "myusers")
-public class User {
+public class User_Identity {
 
 
     /**
@@ -29,7 +29,7 @@ public class User {
     @Column(name = "lastname")
     private String lastName;
 
-    public User() {
+    public User_Identity() {
     }
 
     public Long getId() {
