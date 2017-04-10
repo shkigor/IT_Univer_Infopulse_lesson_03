@@ -26,7 +26,10 @@ univerlesson02_orm=# SELECT * FROM address;
 (1 row)
 
 
-
+Hibernate: select max(id) from myusers
+Hibernate: select max(id) from address
+Hibernate: insert into myusers (lastname, firstname, id) values (?, ?, ?)
+Hibernate: insert into address (name, id) values (?, ?)
 
 
 
