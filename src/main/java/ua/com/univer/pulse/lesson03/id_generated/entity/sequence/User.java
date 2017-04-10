@@ -10,8 +10,10 @@ import javax.persistence.*;
 @Entity // Можно и здесь указать имя таблицы, к которой мы привязываем сущность
 @Table(name = "myusers")
 /**
- * allocationSize = 100. Это означает, что на таблицу выделяется 100 записей.
- * Для 1-ой таблицы они будут нумероваться от 30 до 130
+ * initialValue - начальное значение 30 для первой записи в таблице
+ * allocationSize = 100. Это означает, что на таблицу мы зарезервировали (выделяется) 100 записей.
+ * Для 1-ой таблицы они будут нумероваться от 30 до 130.
+ * Для 2-ой таблицы первая запись будет иметь id = 131.
  */
 @SequenceGenerator(name = "my_sequence_generator", initialValue = 30, allocationSize = 100)
 public class User {
@@ -24,6 +26,10 @@ public class User {
      * GenerationType.IDENTITY не все БД подерживает
      */
     @Id
+    /**
+     * GeneratedValue отвечает за то как будут нумероваться записи в таблице
+     * Если в GeneratedValue ничего не указать, то по умолчанию будет GenerationType.AUTO, который по суте равен GenerationType.SEQUENCE
+     */
     @GeneratedValue(generator = "my_sequence_generator", strategy = GenerationType.SEQUENCE)
     private Long id;
 
