@@ -25,5 +25,69 @@ univerlesson02_orm=# SELECT * FROM address;
   1 | Stepana Bandery
 (1 row)
 
+=======================================
+AFTER Part02_GenerationType_SEQUENCE
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
 
-univerlesson02_orm=#
+univerlesson02_orm=# SELECT * FROM myusers;
+ id | lastname | firstname
+----+----------+-----------
+  1 | Petrov   | Petya
+(1 row)
+
+
+univerlesson02_orm=# SELECT * FROM address;
+ id |        name
+----+--------------------
+  2 | Marshala Batyskogo
+(1 row)
+
+=======================================
+AFTER Part02_GenerationType_SEQUENCE
+@SequenceGenerator(name = "my_sequence_generator", initialValue = 1, allocationSize = 100)
+@GeneratedValue(generator = "my_sequence_generator", strategy = GenerationType.SEQUENCE)
+
+univerlesson02_orm=# \c postgres
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "postgres" as user "postgres".
+postgres=# DROP DATABASE univerlesson02_orm;
+DROP DATABASE
+postgres=# CREATE DATABASE univerlesson02_orm;
+CREATE DATABASE
+postgres=# \c univerlesson02_orm
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "univerlesson02_orm" as user "postgres".
+univerlesson02_orm=# SELECT * FROM myusers;
+ id | lastname | firstname
+----+----------+-----------
+  1 | Petrov   | Petya
+(1 row)
+
+
+univerlesson02_orm=# SELECT * FROM address;
+ id  |        name
+-----+--------------------
+ 102 | Marshala Batyskogo
+(1 row)
+
+
+=======================================
+AFTER Part02_GenerationType_SEQUENCE
+@SequenceGenerator(name = "my_sequence_generator", initialValue = 30, allocationSize = 100)
+
+univerlesson02_orm=# SELECT * FROM myusers;
+ id | lastname | firstname
+----+----------+-----------
+ 30 | Petrov   | Petya
+(1 row)
+
+
+univerlesson02_orm=# SELECT * FROM address;
+ id  |        name
+-----+--------------------
+ 131 | Marshala Batyskogo
+(1 row)

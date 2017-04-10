@@ -9,17 +9,18 @@ import javax.persistence.*;
  */
 @Entity // Можно и здесь указать имя таблицы, к которой мы привязываем сущность
 @Table(name = "myusers")
+@SequenceGenerator(name = "my_sequence_generator", initialValue = 30, allocationSize = 100)
 public class User {
 
 
     /**
      * Если strategy = GenerationType.SEQUENCE, то это означает что для всех таблиц БД нумерация будет сквозная (последовательная),
      * если strategy = GenerationType.IDENTITY, то для каждай таблицы нумерация будет своя
-     *
+     * <p>
      * GenerationType.IDENTITY не все БД подерживает
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "my_sequence_generator", strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(name = "firstname")
