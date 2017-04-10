@@ -9,6 +9,10 @@ import javax.persistence.*;
  */
 @Entity // Можно и здесь указать имя таблицы, к которой мы привязываем сущность
 @Table(name = "myusers")
+/**
+ * allocationSize = 100. Это означает, что на таблицу выделяется 100 записей.
+ * Для 1-ой таблицы они будут нумероваться от 30 до 130
+ */
 @SequenceGenerator(name = "my_sequence_generator", initialValue = 30, allocationSize = 100)
 public class User {
 
