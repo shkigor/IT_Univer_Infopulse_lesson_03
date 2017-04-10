@@ -7,7 +7,7 @@ import javax.persistence.*;
 /**
  * Created by IT-UNIVER3 on 08.04.2017.
  */
-@Entity // Можно и здесь указать имя таблицы, к которой мы привязываем сущность
+//@Entity // Можно и здесь указать имя таблицы, к которой мы привязываем сущность
 @Table(name = "myusers")
 public class User_Identity {
 

@@ -7,7 +7,7 @@ import javax.persistence.*;
 /**
  * Created by IT-UNIVER3 on 08.04.2017.
  */
-@Entity
+//@Entity
 @Table(name ="address")
 public class Address_Identity {
 
