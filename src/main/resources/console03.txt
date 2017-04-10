@@ -25,7 +25,13 @@ univerlesson02_orm=# SELECT * FROM address;
   1 | Stepana Bandery
 (1 row)
 
-=======================================
+
+
+
+
+
+
+=====================================================================================================================
 AFTER Part02_GenerationType_SEQUENCE
 @GeneratedValue(strategy = GenerationType.SEQUENCE)
 
@@ -42,7 +48,13 @@ univerlesson02_orm=# SELECT * FROM address;
   2 | Marshala Batyskogo
 (1 row)
 
-=======================================
+
+
+
+
+
+
+=====================================================================================================================
 AFTER Part02_GenerationType_SEQUENCE
 @SequenceGenerator(name = "my_sequence_generator", initialValue = 1, allocationSize = 100)
 @GeneratedValue(generator = "my_sequence_generator", strategy = GenerationType.SEQUENCE)
@@ -75,7 +87,12 @@ univerlesson02_orm=# SELECT * FROM address;
 (1 row)
 
 
-=======================================
+
+
+
+
+
+=====================================================================================================================
 AFTER Part02_GenerationType_SEQUENCE
 @SequenceGenerator(name = "my_sequence_generator", initialValue = 30, allocationSize = 100)
 
@@ -91,3 +108,33 @@ univerlesson02_orm=# SELECT * FROM address;
 -----+--------------------
  131 | Marshala Batyskogo
 (1 row)
+
+
+
+
+
+
+
+=====================================================================================================================
+AFTER Part02_GenerationType_SEQUENCE
+Added additional data
+
+univerlesson02_orm=# SELECT * FROM myusers;
+ id | lastname | firstname
+----+----------+-----------
+ 30 | Petrov   | Petya
+ 31 | Petrov1  | Petya1
+ 32 | Petrov2  | Petya2
+ 33 | Petrov3  | Petya3
+ 34 | Petrov4  | Petya4
+(5 rows)
+
+
+univerlesson02_orm=# SELECT * FROM address;
+ id  |        name
+-----+---------------------
+ 131 | Marshala Batyskogo
+ 132 | Marshala Batyskogo1
+ 133 | Marshala Batyskogo2
+ 134 | Marshala Batyskogo3
+(4 rows)
