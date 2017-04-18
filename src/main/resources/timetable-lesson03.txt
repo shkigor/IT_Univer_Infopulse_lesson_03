@@ -21,4 +21,16 @@ Hibernate mapping (Descriptor)
 start 1:01
 end   1:39
 
+Hibernate relationship
+start 1:39
+
+one-to-one
+start 1:54
+end   2:25:55
+
+one-to-many
+start 2:25:55
+
+many-to-many
+
 
